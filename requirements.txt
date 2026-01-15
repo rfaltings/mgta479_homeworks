@@ -145,7 +145,7 @@ nbformat==5.10.4
     #   nbclient
     #   nbconvert
     #   otter-grader
-numpy==2.4.0
+numpy==2.4.1
     # via
     #   contourpy
     #   formulaic
@@ -238,7 +238,7 @@ python-dateutil==2.9.0.post0
     #   jupyter-client
     #   matplotlib
     #   pandas
-python-on-whales==0.79.0
+python-on-whales==0.80.0
     # via otter-grader
 pytz==2025.2
     # via pandas
