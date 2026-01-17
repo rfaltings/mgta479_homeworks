@@ -4,6 +4,8 @@ alabaster==1.0.0
     # via sphinx
 annotated-types==0.7.0
     # via pydantic
+appnope==0.1.4 ; sys_platform == 'darwin'
+    # via ipykernel
 asttokens==3.0.1
     # via stack-data
 attrs==25.4.0
@@ -18,7 +20,7 @@ bleach==6.3.0 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
     # via nbconvert
 certifi==2026.1.4
     # via requests
-cffi==2.0.0 ; implementation_name == 'pypy' and sys_platform != 'emscripten' and sys_platform != 'wasi'
+cffi==2.0.0 ; implementation_name == 'pypy'
     # via pyzmq
 charset-normalizer==3.4.4
     # via requests
@@ -30,11 +32,15 @@ colorama==0.4.6 ; sys_platform == 'win32'
     #   ipython
     #   sphinx
 comm==0.2.3
-    # via ipywidgets
+    # via
+    #   ipykernel
+    #   ipywidgets
 contourpy==1.3.3
     # via matplotlib
 cycler==0.12.1
     # via matplotlib
+debugpy==1.8.19
+    # via ipykernel
 decorator==5.2.1
     # via ipython
 defusedxml==0.7.1 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
@@ -65,10 +71,13 @@ imagesize==1.4.1
     # via sphinx
 interface-meta==1.3.0
     # via formulaic
+ipykernel==7.1.0
+    # via pyrsm
 ipylab==1.1.0
     # via otter-grader
 ipython==9.9.0
     # via
+    #   ipykernel
     #   ipywidgets
     #   otter-grader
     #   pyrsm
@@ -91,10 +100,13 @@ jsonschema==4.26.0
     # via nbformat
 jsonschema-specifications==2025.9.1
     # via jsonschema
-jupyter-client==8.8.0 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
-    # via nbclient
+jupyter-client==8.8.0
+    # via
+    #   ipykernel
+    #   nbclient
 jupyter-core==5.9.1
     # via
+    #   ipykernel
     #   jupyter-client
     #   nbclient
     #   nbconvert
@@ -122,7 +134,9 @@ matplotlib==3.10.8
     #   plotnine
     #   pyrsm
 matplotlib-inline==0.2.1
-    # via ipython
+    # via
+    #   ipykernel
+    #   ipython
 mdit-py-plugins==0.5.0
     # via jupytext
 mdurl==0.1.2
@@ -135,8 +149,10 @@ mypy-extensions==1.1.0
     # via linearmodels
 narwhals==2.15.0
     # via formulaic
-nbclient==0.10.4 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
-    # via nbconvert
+nbclient==0.10.4
+    # via
+    #   nbconvert
+    #   pyrsm
 nbconvert==7.16.6 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
     # via otter-grader
 nbformat==5.10.4
@@ -145,6 +161,9 @@ nbformat==5.10.4
     #   nbclient
     #   nbconvert
     #   otter-grader
+    #   pyrsm
+nest-asyncio==1.6.0
+    # via ipykernel
 numpy==2.4.1
     # via
     #   contourpy
@@ -166,6 +185,7 @@ otter-grader==6.1.6
     # via msba-pricing (pyproject.toml)
 packaging==25.0
     # via
+    #   ipykernel
     #   jupytext
     #   matplotlib
     #   nbconvert
@@ -191,6 +211,8 @@ pexpect==4.9.0 ; sys_platform != 'emscripten' and sys_platform != 'win32'
     # via ipython
 pillow==12.1.0
     # via matplotlib
+pip==25.3
+    # via pyrsm
 platformdirs==4.5.1
     # via jupyter-core
 playwright==1.57.0 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
@@ -205,13 +227,15 @@ polars-runtime-32==1.36.1
     # via polars
 prompt-toolkit==3.0.52
     # via ipython
+psutil==7.2.1
+    # via ipykernel
 ptyprocess==0.7.0 ; sys_platform != 'emscripten' and sys_platform != 'win32'
     # via pexpect
 pure-eval==0.2.3
     # via stack-data
 pyarrow==22.0.0
     # via pyrsm
-pycparser==2.23 ; implementation_name == 'pypy' and sys_platform != 'emscripten' and sys_platform != 'wasi'
+pycparser==2.23 ; implementation_name == 'pypy'
     # via cffi
 pydantic==2.12.5
     # via python-on-whales
@@ -231,7 +255,7 @@ pyparsing==3.3.1
     # via matplotlib
 pyreadr==0.5.4
     # via msba-pricing (pyproject.toml)
-pyrsm==2.1.0
+pyrsm==2.2.0
     # via msba-pricing (pyproject.toml)
 python-dateutil==2.9.0.post0
     # via
@@ -247,8 +271,11 @@ pyyaml==6.0.3
     #   fica
     #   jupytext
     #   otter-grader
-pyzmq==27.1.0 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
-    # via jupyter-client
+    #   pyrsm
+pyzmq==27.1.0
+    # via
+    #   ipykernel
+    #   jupyter-client
 referencing==0.37.0
     # via
     #   jsonschema
@@ -267,7 +294,7 @@ scikit-learn==1.8.0
     # via pyrsm
 scikit-misc==0.5.2
     # via pyrsm
-scipy==1.15.3
+scipy==1.17.0
     # via
     #   formulaic
     #   linearmodels
@@ -309,10 +336,13 @@ threadpoolctl==3.6.0
     # via scikit-learn
 tinycss2==1.4.0 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
     # via bleach
-tornado==6.5.4 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
-    # via jupyter-client
+tornado==6.5.4
+    # via
+    #   ipykernel
+    #   jupyter-client
 traitlets==5.14.3
     # via
+    #   ipykernel
     #   ipython
     #   ipywidgets
     #   jupyter-client
