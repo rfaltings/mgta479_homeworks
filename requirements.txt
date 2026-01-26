@@ -45,7 +45,7 @@ decorator==5.2.1
     # via ipython
 defusedxml==0.7.1 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
     # via nbconvert
-dill==0.4.0
+dill==0.4.1
     # via otter-grader
 docutils==0.22.4
     # via
@@ -53,7 +53,7 @@ docutils==0.22.4
     #   sphinx
 executing==2.2.1
     # via stack-data
-fastexcel==0.18.0
+fastexcel==0.19.0
     # via pyrsm
 fastjsonschema==2.21.2
     # via nbformat
@@ -63,7 +63,7 @@ fonttools==4.61.1
     # via matplotlib
 formulaic==1.2.1
     # via linearmodels
-greenlet==3.3.0 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
+greenlet==3.3.1 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
     # via playwright
 idna==3.11
     # via requests
@@ -115,7 +115,7 @@ jupyterlab-pygments==0.3.0 ; sys_platform != 'emscripten' and sys_platform != 'w
     # via nbconvert
 jupyterlab-widgets==3.0.16
     # via ipywidgets
-jupytext==1.18.1
+jupytext==1.19.1
     # via otter-grader
 kiwisolver==1.4.9
     # via matplotlib
@@ -183,7 +183,7 @@ numpy==2.4.1
     #   xlogit
 otter-grader==6.1.6
     # via msba-pricing (pyproject.toml)
-packaging==25.0
+packaging==26.0
     # via
     #   ipykernel
     #   jupytext
@@ -191,7 +191,7 @@ packaging==25.0
     #   nbconvert
     #   sphinx
     #   statsmodels
-pandas==2.3.3
+pandas==3.0.0
     # via
     #   formulaic
     #   linearmodels
@@ -233,9 +233,9 @@ ptyprocess==0.7.0 ; sys_platform != 'emscripten' and sys_platform != 'win32'
     # via pexpect
 pure-eval==0.2.3
     # via stack-data
-pyarrow==22.0.0
+pyarrow==23.0.0
     # via pyrsm
-pycparser==2.23 ; implementation_name == 'pypy'
+pycparser==3.0 ; implementation_name == 'pypy'
     # via cffi
 pydantic==2.12.5
     # via python-on-whales
@@ -251,7 +251,7 @@ pygments==2.19.2
     #   sphinx
 pyhdfe==0.2.0
     # via linearmodels
-pyparsing==3.3.1
+pyparsing==3.3.2
     # via matplotlib
 pyreadr==0.5.4
     # via msba-pricing (pyproject.toml)
@@ -264,8 +264,6 @@ python-dateutil==2.9.0.post0
     #   pandas
 python-on-whales==0.80.0
     # via otter-grader
-pytz==2025.2
-    # via pandas
 pyyaml==6.0.3
     # via
     #   fica
@@ -309,7 +307,7 @@ six==1.17.0
     # via python-dateutil
 snowballstemmer==3.0.1
     # via sphinx
-soupsieve==2.8.1 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
+soupsieve==2.8.3 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
     # via beautifulsoup4
 sphinx==9.1.0
     # via fica
@@ -363,13 +361,13 @@ typing-extensions==4.15.0
     #   typing-inspection
 typing-inspection==0.4.2
     # via pydantic
-tzdata==2025.3
+tzdata==2025.3 ; sys_platform == 'emscripten' or sys_platform == 'win32'
     # via
     #   mizani
     #   pandas
 urllib3==2.6.3
     # via requests
-wcwidth==0.2.14
+wcwidth==0.3.5
     # via prompt-toolkit
 webencodings==0.5.1 ; sys_platform != 'emscripten' and sys_platform != 'wasi'
     # via
